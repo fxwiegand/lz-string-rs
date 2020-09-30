@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["compress",""],["compress_str",""],["compress_uri",""],["decompress","Panics Panics if `bits_per_char` is greater than the number of bits in a `u32`."],["decompress_str",""],["decompress_uri",""],["str_to_u32_vec",""]]});
