@@ -116,6 +116,7 @@ pub fn compress<F: Fn(u32) -> u32>(
 ) -> Vec<u32> {
     let mut ctx = CompressContext::new(bits_per_char, to_char);
     uncompressed.chars().for_each(|c| {
+        dbg!(c.clone());
         let c_str = c.to_string();
         if !ctx.dictionary.contains_key(&c_str) {
             ctx.dictionary.insert(c_str.clone(), ctx.dict_size as u32);
