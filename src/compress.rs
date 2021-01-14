@@ -65,7 +65,9 @@ impl<F: Fn(u32) -> u32> CompressContext<F> {
         if self.position == self.bits_per_char - 1 {
             self.position = 0;
             let char_data = (self.to_char)(self.val);
-            dbg!(char_data);
+            if char_data < 40 {
+                dbg!(char_data);
+            }
             self.output.push(char_data);
             self.val = 0;
         } else {
