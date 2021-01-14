@@ -61,6 +61,8 @@ impl<F: Fn(u32) -> u32> CompressContext<F> {
 
     #[inline]
     pub fn write_bit(&mut self, value: u32) {
+        dbg!("Vorher");
+        dbg!(self.val);
         self.val = (self.val << 1) | value;
         if self.position == self.bits_per_char - 1 {
             self.position = 0;
@@ -69,6 +71,7 @@ impl<F: Fn(u32) -> u32> CompressContext<F> {
                 dbg!("Hier ist etwas komisch!");
             }
             dbg!(char_data);
+            dbg!("Nachher");
             dbg!(self.val);
             self.output.push(char_data);
             self.val = 0;
